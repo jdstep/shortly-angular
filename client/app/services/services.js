@@ -9,8 +9,17 @@ angular.module('shortly.services', [])
     });
   };
 
+  var addServerLink = function(url) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: url
+    });
+  };
+
   return {
-    getServerLinks: getServerLinks
+    getServerLinks: getServerLinks,
+    addServerLink: addServerLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
