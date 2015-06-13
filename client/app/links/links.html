@@ -4,4 +4,14 @@
     <a href="/#/shorten">Shorten URl</a>
   </div>
   <!-- Your html here -->
+  <div id='linksContainer'>
+    <ul>
+      <li ng-repeat="link in allLinks">
+        <p>Title: {{ link.title }}</p>
+        <p>URl: {{ link.url }}</p>
+        <p>Shortly URl:
+          <a href="http://localhost:3000/{{ link.code }}"> http://localhost:3000/{{ link.code}}</a>
+      </li>
+    </ul>
+  </div>
 </div>

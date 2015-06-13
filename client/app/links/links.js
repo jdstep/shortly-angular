@@ -12,8 +12,19 @@ angular.module('shortly.links', [])
     Links.getServerLinks()
       .then(function (links) {
         $scope.data['links'] = links.data;
+        checkAllLinkData($scope.data.links);
+        console.log($scope.data.links);
       });
   };
-
+  $scope.allLinks = [];
+  var checkAllLinkData = function(links) {
+    for (var i = 0; i < links.length; i++){
+      $scope.allLinks.push({
+        url: links[i].url,
+        title: links[i].title,
+        code: links[i].code
+      });
+    }
+  };
   $scope.getLinks();
 });
