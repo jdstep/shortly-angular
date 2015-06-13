@@ -22,7 +22,8 @@ angular.module('shortly.links', [])
       $scope.allLinks.push({
         url: links[i].url,
         title: links[i].title,
-        code: links[i].code
+        code: links[i].code,
+        visits: links[i].visits
       });
     }
   };

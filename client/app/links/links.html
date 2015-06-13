@@ -9,11 +9,12 @@
   </div>
   <div id='linksContainer'>
     <ul>
-      <li ng-repeat="link in allLinks | filter:search">
+      <li ng-repeat="link in allLinks | filter:search | orderBy:'-visits'">
         <p>Title: {{ link.title }}</p>
         <p>URl: {{ link.url }}</p>
         <p>Shortly URl:
-          <a href="http://localhost:3000/{{ link.code }}"> http://localhost:3000/{{ link.code}}</a>
+          <a href="http://localhost:3000/{{ link.code }}"> http://localhost:3000/{{ link.code}}</a></p>
+        <p>Visits: {{ link.visits }}</p>
       </li>
     </ul>
   </div>
