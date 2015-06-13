@@ -19,6 +19,9 @@ angular.module('shortly.shorten', [])
       if (key === 'url' ||
           key === 'title' ||
           key === 'code') {
+        if(key === 'code') {
+          $scope.addedLink['shortlyUrl'] = 'http://localhost:3000/' + linkObj[key];
+        }
         $scope.addedLink[key] = linkObj[key];
       }
     }

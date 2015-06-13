@@ -4,9 +4,12 @@
     <a href="/#/shorten">Shorten URl</a>
   </div>
   <!-- Your html here -->
+  <div id='searchContainer'>
+    <input name="happySearchBox" ng-model="search" type="search" placeholder="User beware!@!#!@#!@ Your search decides your fate">
+  </div>
   <div id='linksContainer'>
     <ul>
-      <li ng-repeat="link in allLinks">
+      <li ng-repeat="link in allLinks | filter:search">
         <p>Title: {{ link.title }}</p>
         <p>URl: {{ link.url }}</p>
         <p>Shortly URl:

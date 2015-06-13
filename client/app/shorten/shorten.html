@@ -2,9 +2,15 @@
   <div id='nav'>
     <a href="/#/links">All Links</a>
     <a href="/#/shorten">Shorten URl</a>
-  </div>
-  <input ng-model='newLink'>
-  <button ng-click='addLink(newLink)'>SHORTENIFY MY LINK-A-MA-GIGGLE</button>
+  </div><form name="validate">
+    <input type="url" name="urlInput" ng-model='newLink' required>
+    <button ng-click='addLink(newLink)'>SHORTENIFY MY LINK-A-MA-GIGGLE</button>
+    <h2></h2>
+    <div role="alert">
+      <span class="error" ng-show="validate.urlInput.$error.required">FEEED ME UR URLSSS</span>
+      <span class="error" ng-show="validate.urlInput.$error.url">UGGHHHH YOU FLAVOR THAT URl WITH THE RIGHT SAUCE</span>
+    </div>
+  </form>
 <!-- Your code here -->
   <div ng-model='addedLink'>
   <h2 ng-repeat="(key, value) in addedLink"> {{key}}: {{ value }} </h2>
