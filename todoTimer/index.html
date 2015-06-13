@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <script src="../client/lib/angular/angular.js"></script>
+    <script src="/controller.js"></script>
+    <script src="/factory.js"></script>
+  </head>
+  <body>
+    <h1>Todo Tada</h1>
+    <div ng-controller="todoController">
+      <input name="todoItem" ng-model="newTodoName" placeholder="Todo Task">
+      <input name="todoTime" ng-model="newTodoTime" placeholder="Time in minutes">
+      <button name="submit" ng-click="addTodo(newTodoName, newTodoTime)">MAKE THIS TODO</button>
+    </div>
+  </body>
+</html>

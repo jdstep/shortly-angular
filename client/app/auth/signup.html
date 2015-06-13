@@ -1,9 +1,24 @@
 <div id='signup'>
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
-    <input type='text' ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
+    <input type='email' name="userInput" ng-model='user.username' required>
+    <input type="password" name="passwordInput" ng-model='user.password' ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/" required>
     <button>signup</button>
+    <div role="alert">
+      <h2></h2>
+       <span class="error" ng-show="signupForm.userInput.$error.required">
+         Required!</span>
+       <span class="error" ng-show="signupForm.userInput.$error.email">
+         Not valid email!</span>
+         <span class="error" ng-show="signupForm.passwordInput.$error.required">
+         Required password YO!</span>
+       <span class="error" ng-show="signupForm.passwordInput.$error.pattern">
+         Password must have 1 letter, 1 number and 8 CHARSSSSsssssssssss yissssss</span>
+     </div>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
 </div>
+
+
+
+
